@@ -1,7 +1,7 @@
 /**
  * File Name:               DemoDecoratorPattern.java
  * Course:                  ENSF 614 - Fall 2021
- * Lab # and Assignment #:  Lab 7 Exercise B
+ * Lab # and Assignment #:  Lab 7 Exercise A and B
  * Lab section:             B01
  * Completed by:            Aastha Patel, Bhavyai Gupta
  * Submission Date:         November 23, 2021
@@ -23,14 +23,16 @@ public class DemoDecoratorPattern extends JPanel {
         int fontSize = 10;
         g.setFont(new Font("TimesRoman", Font.PLAIN, fontSize));
 
-        // Now lets decorate t with BorderDecorator: x = 30, y = 30, width = 100, and
-        // height 100
+        // Now lets decorate t with BorderDecorator: x = 30, y = 30, width = 100,
+        // and height 100
         t = new BorderDecorator(t, 30, 30, 100, 100);
 
         // Now lets add a ColouredFrameDecorator with x = 25, y = 25, width = 110,
-        // height = 110,
-        // and thickness = 10.
+        // height = 110, and thickness = 10.
         t = new ColouredFrameDecorator(t, 25, 25, 110, 110, 10);
+
+        // GlassFrameDecorator info: x = 25, y = 25, width = 110, and height = 110
+        t = new ColouredGlassDecorator(t, 25, 25, 110, 110);
 
         // Now lets draw the product on the screen
         t.draw(g);
